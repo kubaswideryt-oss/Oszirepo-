@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>???</title>
+<style>
+    body {
+        background: black;
+        color: lime;
+        font-family: "Courier New", monospace;
+        text-align: center;
+        margin-top: 100px;
+    }
+    button, input {
+        background: black;
+        color: lime;
+        border: 2px solid lime;
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+    }
+    button:hover {
+        background: lime;
+        color: black;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h1 id="question">czy na pewno?</h1>
+
+<div id="buttons">
+    <button onclick="handleAnswer(false)">nie</button>
+    <button onclick="handleAnswer(true)">tak</button>
+</div>
+
+<div id="content"></div>
+
+<script>
+let stage = 0;
+
+function handleAnswer(answer) {
+    const question = document.getElementById("question");
+    const content = document.getElementById("content");
+
+    if (!answer) {
+        content.innerText = "spierdalaj";
+        return;
+    }
+
+    if (stage === 0) {
+        question.innerText = "ej serio ziomek?";
+        content.innerText = "";
+        stage = 1;
+    } else if (stage === 1) {
+        question.innerText = "wpisz kod:";
+        document.getElementById("buttons").style.display = "none";
+
+        content.innerHTML = `
+            <input type="text" id="codeInput" placeholder="kod..."><br>
+            <button onclick="checkCode()">zatwierdź</button>
+        `;
+    }
+}
+
+function checkCode() {
+    const code = document.getElementById("codeInput").value;
+    const content = document.getElementById("content");
+
+    if (code === "DziwkiKoksTajskiBoks") {
+        content.innerText = "ładowanie śmieciu jebany, zara oszi ci da unreleasa...";
+
+        setTimeout(() => {
+            // 
+            window.location.href = "https://www.pornhub.com";
+        }, 5000);
+
+    } else {
+        content.innerText = "zły kod, wypierdalaj";
+    }
+}
+</script>
+
+</body>
+  </html>
