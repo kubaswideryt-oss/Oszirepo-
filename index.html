@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSZI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="fireCanvas"></canvas>
+
+<div class="container">
+    <h1 class="logo">OSZI</h1>
+
+    <button onclick="showLabel()">LABEL</button>
+    <button onclick="showUnreleased()">UNRELEASED</button>
+    <button onclick="showTracks()">UTWORY</button>
+    <button onclick="showTeam()">WSPÓŁPRACA / DOŁĄCZ DO TEAMU</button>
+
+    <div id="infoBox" class="infoBox hidden">
+        <p id="infoText"></p>
+        <div id="extraButtonArea"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
