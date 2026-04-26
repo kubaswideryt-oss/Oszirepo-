@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: black;
+  overflow: hidden;
+  color: white;
+}
+
+/* OGIEŃ W TLE */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* UI NAD WSZYSTKIM */
+.ui {
+  position: relative;
+  z-index: 10; /* 🔥 TO BYŁ BŁĄD WCZEŚNIEJ */
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1 {
+  font-size: 70px;
+  color: #ff0033;
+  text-shadow: 0 0 20px red;
+}
+
+.sub {
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+/* TERMINAL */
+.terminal {
+  width: 60%;
+  margin: auto;
+  border: 1px solid #0ff;
+  padding: 10px;
+  box-shadow: 0 0 10px cyan;
+  background: rgba(0,0,0,0.6);
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* BUTTONY */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background: black;
+  color: cyan;
+  border: 1px solid cyan;
+  cursor: pointer;
+}
+
+button:hover {
+  background: cyan;
+  color: black;
+}
